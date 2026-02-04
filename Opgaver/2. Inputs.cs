@@ -5,7 +5,6 @@ namespace Opgaver
 {
     public class Inputs
     {
-        private static int et;
 
         public static void Run()
         {
@@ -30,7 +29,7 @@ namespace Opgaver
             Console.WriteLine("Indtast en streng: ");
             // Lav opgaven herunder!
             Console.WriteLine("Indtast dit navn:");
-            string DitNavn = Console.ReadLine();
+            string? DitNavn = Console.ReadLine();
 
             Console.WriteLine("Hej, " + DitNavn + "!");
         }
@@ -86,11 +85,11 @@ namespace Opgaver
             Console.WriteLine("Eksempel: Hej, jeg hedder X, er X år gammel og kommer fra X!");
             // Lav opgaven herunder!
             Console.WriteLine("Hej, hvad hedder du?");
-            string NavnInput = Convert.ToString(Console.ReadLine());
+            string? NavnInput = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Hvor gammel er du?");
-            string AldersInput = Convert.ToString(Console.ReadLine());
+            string? AldersInput = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Til sidst hvor bor du?");
-            string ByInput = Convert.ToString(Console.ReadLine());
+            string? ByInput = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Hej, jeg hedder " + NavnInput + ", er " + AldersInput + " år gammel og kommer fra " + ByInput + "! " );
 				}
 

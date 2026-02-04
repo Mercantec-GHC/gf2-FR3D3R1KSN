@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 
 namespace Opgaver
 {
@@ -28,21 +29,66 @@ namespace Opgaver
             );
             // Lav opgaven herunder!
             Console.WriteLine("Hvor gammel er du?");
-            int HigherOrLower = int.Parse((Console.ReadLine()));
-            bool IsHigher = ( HigherOrLower > 18);
-            Console.WriteLine(IsHigher);
+            int HigherOrLower = Convert.ToInt32(Console.ReadLine());
+            bool IsHigher = ( HigherOrLower >= 18);
+
+            if (IsHigher)
+            {
+                Console.WriteLine("Så skal der fandme hakkes stifter");
+            }
+            else
+            {
+                Console.WriteLine("Smut hjem og se disney sjov pattebarn");
+            }
         }
 
         public static void If2()
         {
             Console.WriteLine("Lav et program som tjekker om en given værdi er lige eller ulige");
             // Lav opgaven herunder!
+            Console.WriteLine("Indtast et tal");
+            int EqualOrUnequal = Convert.ToInt32(Console.ReadLine());
+            int Leftover = EqualOrUnequal % 2;
+            
+            if (Leftover == 0)
+            {
+                Console.WriteLine("Dit tal er lige");
+            }
+            else
+            {
+                Console.WriteLine("Dit tal er ulige");
+            }
         }
 
         public static void Switch1()
         {
             Console.WriteLine("Lav et program som tjekker om en given værdi er lige eller ulige");
             // Lav opgaven herunder!
+            Console.WriteLine("Indtast et tal");
+            String SwEqualInput = Console.ReadLine();
+            int SwEqual;
+
+            if (int.TryParse(SwEqualInput, out SwEqual))
+            {
+                int SwLeftover = SwEqual % 2;
+
+                switch (SwLeftover == 0)
+                {
+                    case true:
+                        Console.WriteLine("Så er den lige");
+                        break;
+                    case false:
+                        Console.WriteLine("Så er den ulige");
+                        break;
+                    default:
+                        Console.WriteLine("Skriv et heltal!!!! Dompap");
+                        break;
+                }
+            }
+             else
+                {
+                    Console.WriteLine("Skriv et heltal!!!! Dompap");
+                }
         }
 
         public static void Ternary1()
