@@ -27,6 +27,10 @@ namespace Opgaver
                 "Lav et program som tjekker om en given værdi er højere eller lavere end 18"
             );
             // Lav opgaven herunder!
+            Console.WriteLine("Hvor gammel er du?");
+            int HigherOrLower = int.Parse((Console.ReadLine()));
+            bool IsHigher = ( HigherOrLower > 18);
+            Console.WriteLine(IsHigher);
         }
 
         public static void If2()
