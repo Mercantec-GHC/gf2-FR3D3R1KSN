@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Opgaver
 {
@@ -27,6 +28,10 @@ namespace Opgaver
             Console.WriteLine("Opgave 1:");
             Console.WriteLine("Brug et loop til at udskrive tallene fra 1 til 10.");
             // Lav opgaven herunder!
+            for (int Counter1 = 0; Counter1 < 11; Counter1++)
+            {
+                Console.WriteLine("Antal = " + Counter1);
+            }
         }
 
         public static void Loop2()
@@ -34,6 +39,15 @@ namespace Opgaver
             Console.WriteLine("Opgave 2:");
             Console.WriteLine("Brug et loop og en if-betingelse til at udskrive alle lige tal fra 2 til 20.");
             // Lav opgaven herunder!
+            int EqualCounter = 0;
+            while (EqualCounter <= 20)
+          { 
+            if (EqualCounter % 2 == 0)
+            {
+                Console.WriteLine(+EqualCounter);
+            }
+                EqualCounter++;
+          }
         }
 
         public static void Loop3()
@@ -41,6 +55,16 @@ namespace Opgaver
             Console.WriteLine("Opgave 3:");
             Console.WriteLine("Brug et loop til at lægge alle tal fra 1 til 100 sammen og udskriv resultatet.");
             // Lav opgaven herunder!
+            int CountToHundred = 0;
+            int CountToHundredTotal = 0;
+
+            do
+            {
+                CountToHundredTotal += CountToHundred;
+                CountToHundred++;
+            } while (CountToHundred <= 100);
+
+			Console.WriteLine($"Summen er {CountToHundredTotal}");
         }
 
         public static void Loop4()
