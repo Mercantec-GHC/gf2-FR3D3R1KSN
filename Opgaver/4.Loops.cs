@@ -9,13 +9,13 @@ namespace Opgaver
         {
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("Velkommen til opgaver omkring Loops både med og uden datastrukturer!");
-            Loop1();
-            Loop2();
-            Loop3();
-            Loop4();
-            Loop5();
-            Loop6();
-            Loop7();
+            //Loop1();
+            //Loop2();
+            //Loop3();
+            //Loop4();
+            //Loop5();
+            //Loop6();
+            //Loop7();
             Loop8();
             Loop9();
             Loop10();
@@ -41,13 +41,13 @@ namespace Opgaver
             // Lav opgaven herunder!
             int EqualCounter = 0;
             while (EqualCounter <= 20)
-          { 
-            if (EqualCounter % 2 == 0)
             {
-                Console.WriteLine(+EqualCounter);
-            }
+                if (EqualCounter % 2 == 0)
+                {
+                    Console.WriteLine(+EqualCounter);
+                }
                 EqualCounter++;
-          }
+            }
         }
 
         public static void Loop3()
@@ -64,7 +64,7 @@ namespace Opgaver
                 CountToHundred++;
             } while (CountToHundred <= 100);
 
-			Console.WriteLine($"Summen er {CountToHundredTotal}");
+            Console.WriteLine($"Summen er {CountToHundredTotal}");
         }
 
         public static void Loop4()
@@ -72,6 +72,17 @@ namespace Opgaver
             Console.WriteLine("Opgave 4:");
             Console.WriteLine("Bed brugeren om at indtaste sit navn og et tal. Udskriv navnet det antal gange ved hjælp af et loop.");
             // Lav opgaven herunder!
+            Console.WriteLine("Indtast dit navn");
+            string NameInput = Console.ReadLine();
+            Console.WriteLine("Hvor mange gange skal det udskrives?");
+            int NoInput = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < NoInput; i++)
+            {
+                Console.WriteLine(NameInput);
+            }
+            Console.WriteLine("Færdig!");
+
         }
 
         public static void Loop5()
@@ -79,6 +90,16 @@ namespace Opgaver
             Console.WriteLine("Opgave 5:");
             Console.WriteLine("Bed brugeren om at indtaste et tal. Brug et loop til at udskrive alle tal fra det indtastede tal og ned til 1.");
             // Lav opgaven herunder!
+            Console.WriteLine("Indtast det tal du vil have talt ned fra!");
+            int CountDownInput = int.Parse(Console.ReadLine());
+
+            for (int Cd = CountDownInput; Cd >= 1; Cd--)
+            {
+                Console.WriteLine(Cd);
+            }
+            Console.WriteLine("Færdig!");
+
+
         }
 
         public static void Loop6()
@@ -87,21 +108,49 @@ namespace Opgaver
             Console.WriteLine(@"Brug et loop til at udskrive alle bogstaverne i dit navn (ét bogstav pr. linje). 
             Navnet skal være gemt i en string variabel.");
             // Lav opgaven herunder!
+            Console.WriteLine("Indtast dit navn og få afvide hvor mange bogstaver der er i det!");
+            string NameLength = Console.ReadLine();
+
+            for (int i = 0; i < NameLength.Length; i++)
+            {
+                Console.WriteLine(NameLength[i] + " " + i);
+            }
         }
 
         public static void Loop7()
         {
             Console.WriteLine("Opgave 7:");
             Console.WriteLine("Brug et loop til at tælle, hvor mange gange bogstavet 'a' optræder i en tekst, som brugeren indtaster.");
-            // Lav opgaven herunder!
+			// Lav opgaven herunder!
+			Console.WriteLine("Her skal du skrive den tekst du vil have bogstavet A optalt i");
+            string HowManyAInput = Console.ReadLine();
+            int count = 0;
+
+            foreach (char a in HowManyAInput)
+            {
+                if (char.ToUpper(a) == 'A')
+                {
+                    count++;
+                }
+            }
+			Console.WriteLine($"Antallet af bogstavet a i din tekst er: {count}");
         }
 
         public static void Loop8()
         {
             Console.WriteLine("Opgave 8:");
             Console.WriteLine("Brug et loop til at udskrive alle ulige tal mellem 1 og 50.");
-            // Lav opgaven herunder!
-        }
+			// Lav opgaven herunder!
+			int EqualCounter = 0;
+			while (EqualCounter <= 50)
+			{
+				if (EqualCounter % 2 == 1)
+				{
+					Console.WriteLine(+EqualCounter);
+				}
+				EqualCounter++;
+			}
+		}
 
         public static void Loop9()
         {
