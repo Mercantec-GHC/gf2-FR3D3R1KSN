@@ -1,5 +1,7 @@
 using System;
+using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Channels;
 
 namespace Opgaver
 {
@@ -16,8 +18,8 @@ namespace Opgaver
             //Loop5();
             //Loop6();
             //Loop7();
-            Loop8();
-            Loop9();
+            //Loop8();
+            //Loop9();
             Loop10();
             BankeBøf();
             MiniProjektLommeregner();
@@ -157,13 +159,43 @@ namespace Opgaver
             Console.WriteLine("Opgave 9:");
             Console.WriteLine("Bed brugeren om at indtaste 5 tal (ét ad gangen). Brug et loop til at lægge dem sammen og udskriv summen til sidst.");
             // Lav opgaven herunder!
-        }
+          decimal counterSum = 0;
 
+
+            for (int InputCounter = 0; InputCounter < 5; InputCounter++)
+            {
+                Console.WriteLine("Indtast et tal!");
+                decimal CounterInput = Convert.ToDecimal(Console.ReadLine());
+                counterSum += CounterInput;
+            }
+            Console.WriteLine($"Summen af dine tal er: {counterSum}");
+
+        }
         public static void Loop10()
         {
             Console.WriteLine("Opgave 10:");
-            Console.WriteLine("Lav et program, hvor brugeren skal gætte et hemmeligt tal mellem 1 og 10. Brug et loop, så brugeren kan gætte indtil det rigtige tal er fundet.");
+            Console.WriteLine("Lav et program, hvor brugeren skal gætte et hemmeligt tal mellem 1 og 1000. Brug et loop, så brugeren kan gætte indtil det rigtige tal er fundet.");
             // Lav opgaven herunder!
+            Console.WriteLine("Du skal gætte et tal mellem 1 og 1000");
+
+            Random RNGenerator = new Random();
+            int RNGNumber = RNGenerator.Next(1, 1001);
+            int GuessInput = Convert.ToInt32(Console.ReadLine());
+
+            while (GuessInput != RNGNumber)
+            {
+                while (GuessInput < RNGNumber)
+                {
+                    Console.WriteLine("For lavt!");
+                    GuessInput = Convert.ToInt32(Console.ReadLine());
+                }
+                while (GuessInput > RNGNumber)
+                {
+                    Console.WriteLine("For højt!");
+                    GuessInput = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Korrekt, hvor er du god!");
         }
 
         public static void BankeBøf()
