@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Metrics;
 using System.Threading.Channels;
 
 namespace Opgaver
@@ -20,7 +21,7 @@ namespace Opgaver
             //Loop7();
             //Loop8();
             //Loop9();
-            Loop10();
+            //Loop10();
             BankeBøf();
             MiniProjektLommeregner();
         }
@@ -204,6 +205,27 @@ namespace Opgaver
             Udskriv 'Banke' hvis tallet er deleligt med 3, 'Bøf' hvis tallet er deleligt med 5 
             og 'BankeBøf' hvis tallet er deleligt med både 3 og 5.");
             // Lav opgaven herunder!
+            int Counter1 = 1;
+            for (; Counter1 < 31; Counter1++)
+        {
+            if (Counter1 % 5 == 0 && Counter1 % 3 == 0)
+            {
+                    Console.WriteLine("Bankebøf");
+            }
+            else if (Counter1 % 3 == 0)
+            {
+                    Console.WriteLine("Banke");
+            }
+            else if (Counter1 % 5 == 0)
+            {
+                    Console.WriteLine("Bøf");
+            }
+            else
+            {
+                    Console.WriteLine($"{Counter1}");
+            }
+        }
+            
         }
         public static void MiniProjektLommeregner()
         {
@@ -213,6 +235,34 @@ namespace Opgaver
             Console.WriteLine("Programmet skal udregne og udskrive resultatet.");
             Console.WriteLine("Tip: Brug if/else eller switch til at vælge regnearten.");
             // Lav opgaven herunder!
+            Console.WriteLine("Indtast det første tal du vil bruge i dit regnestykke!");
+            decimal Input1 = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Indtast det andet tal du vil bruge i dit regnestykke!");
+            decimal Input2 = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine(@"Hvilken regneart vil du bruge?
+            + 
+            -
+            *
+            /");
+            string MathInput = Console.ReadLine();
+            switch (MathInput)
+            {
+                case "+":
+                    Console.WriteLine($"Resultatet er: {Input1 + Input2}");
+                    break;
+                case "-":
+                    Console.WriteLine($"Resultatet er: {Input1 - Input2}");
+                    break;
+                case "*":
+                    Console.WriteLine($"Resultatet er: {Input1 * Input2}");
+                    break;
+                case "/":
+                    Console.WriteLine($"Resultatet er: {Input1 / Input2}");
+                    break;
+                default: Console.WriteLine("Forkert indput, prøv igen!");
+                    break;
+            }
+
         }
     }
 }
